@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+		integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+	<title>Mission to Mars</title>
+</head>
+
+<body>
+	<main role="main">
+
+		<!-- Main jumbotron for a primary marketing message or call to action -->
+		<div class="jumbotron">
+			<div class="container">
+				<h1 class="display-3">Mission to Mars</h1>
+				<p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+			</div>
+		</div>
+
+
+		<div class="container">
+			<!-- Example row of columns -->
+			<div class="row">
+				<div class="col-md-8">
+					<h2>Latest Mars News</h2>
+					<h4 class="media-heading"><b>{{mars['news_title']}}</b></h4>
+					</p>{{mars['news_p']}}</p>
+				</div>
+			</div>
+		</div> <!-- /container -->
+		<br>
+		<div class="container">
+			<!-- Example row of columns -->
+			<div class="row">
+				<div class="col-md-8">
+					<h2>Featured Mars Image</h2>
+					<img src="{{mars['featured_image_url']}}" class="img-fluid">
+				</div>
+				<div class="col-md-4">
+					<h2>Mars Facts</h2>
+					{{table | safe}}
+				</div>
+			</div>
+		</div> <!-- /container -->
+		<br>
+		<div class="container">
+			<!-- Example row of columns -->
+			<div class="row">
+				{% for hemisphere_image_url in mars['hemisphere_image_urls'] %}
+				<div class="col-md-6">
+					<div class="thumbnail">
+						<img src="{{hemisphere_image_url['img_url']}}" class="img-fluid">
+						<div class="caption">
+							{{hemisphere_image_url['title']}}
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div> <!-- /container -->
+	</main>
+
+
+
+</body>
+
+</html>
