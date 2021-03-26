@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
 import pymongo
 import scrape_mars
 import pandas as pd 
