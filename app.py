@@ -22,7 +22,7 @@ def scrape():
 	mars = client.db.mars 
 	data = scrape_mars.scrape()
 	mars.update({}, data)
-	return redirect("/", code=302
+	return redirect("/", code=302)
 
 if __name__ == "__main__":
 	app.run(debug=True)
