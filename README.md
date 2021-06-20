@@ -1,5 +1,8 @@
 # Mission to Mars
 
+## Purpose
+This project was a ton of fun! I had to create a front end webpage with flask to display the data that was then web scraped and appended to that database! The front end of the webpage was made to handle the user instructions for scraping the live NASA database, trying to capture a real world example for web scraping!
+
 ![mission_to_mars](Images/mission_to_mars.png)
 
 In this assignment, you will build a web application that scrapes various websites for data related to the Mission to Mars and displays the information in a single HTML page. The following outlines what you need to do.
